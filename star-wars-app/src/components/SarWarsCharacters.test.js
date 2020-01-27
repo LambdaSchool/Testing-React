@@ -32,7 +32,7 @@ test(' buttons re-render new page', async () => {
     expect(mockData).toHaveBeenCalledTimes(1);
 
   
-    await(() => expect(getByText(/Luke/i).toBeInDocument()))
+    wait(() => expect(getByText(/Luke/i).toBeInDocument()))
 
 
 
