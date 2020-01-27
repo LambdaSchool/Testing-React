@@ -12,7 +12,10 @@ test('renders the chracters data, next button and previous button', async () => 
         mass: '77',
         hair_color: 'blond',
         skin_color: 'fair',
-    }]})
+    }],
+    next: "abcde",
+    previous: "abcd"
+})
 
     const { getByText } = render(<StarWarsCharacters />);
 
