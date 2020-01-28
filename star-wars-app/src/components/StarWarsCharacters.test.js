@@ -27,5 +27,5 @@ test('renders the chracters data, next button and previous button', async () => 
 
     expect(mockGetData).toHaveBeenCalledTimes(1);
 
-    wait(() => expect(getByText(/luke/i)));
+    await wait(() => expect(getByText(/luke/i)));
 })
