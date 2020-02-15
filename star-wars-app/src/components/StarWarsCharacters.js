@@ -44,14 +44,14 @@ export default function StarWarsCharacters() {
           timeout={3000} //3 secs
         />
       ) : (
-        <>
+        <div data-testid="resolved">
           {characters.map(character => (
             <div key={character.url}>{character.name}</div>
           ))}
-        </>
+        </div>
       )}
       <div className="buttons">
-        <button onClick={goToPrevious} disabled={!previous}>
+        <button data-testid="prev" onClick={goToPrevious} disabled={!previous} >
           Previous
         </button>
         <button onClick={goToNext} disabled={!next}>
