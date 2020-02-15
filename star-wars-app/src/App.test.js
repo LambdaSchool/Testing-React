@@ -1,27 +1,32 @@
-// import React from 'react';
-// import * as rtl from '@testing-library/react';
-// import '@testing-library/jest-dom/extend-expect';
-// import App from './App'
+import React from 'react';
+import * as rtl from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import App from './App'
 
-// test('render of new characters', async () => {
-//   const wrapper = rtl.render(<App />);
+test('render of new characters', async () => {
+  const wrapper = rtl.render(<App />);
+  await wrapper.findAllByAltText(/peep/);
 
-//   const newPeeps = await wrapper.findAllByAltText(/peep/i);
+  const next = wrapper.getByText(/next/i);
 
-//   expect(newPeeps[0]).toBeVisible();
-// });
+  rtl.act(()=>{
+    rtl.fireEvent.click(next);
+  });
 
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import App from "./App";     
+  expect(wrapper.queryByAltText(/peep/i)).toBeNull();
+});
 
-test('loads new characters', async () => {
-  const { findAllByAltText } = render(<App />)
+// import React from "react";
+// import { render, fireEvent } from "@testing-library/react";
+// import App from "./App";     
 
-  // Click button
-  fireEvent.click(findAllByAltText(/peep/i))
+// test('loads new characters', async () => {
+//   const { findAllByAltText } = render(<App />)
 
-  // Wait for page to update with query text
-  const char = await findAllByAltText(/peep/i)
-  expect(char).toBe(/peep/i)
-})
+//   // Click button
+//   fireEvent.click(findAllByAltText(/peep/i))
+
+//   // Wait for page to update with query text
+//   const char = await findAllByAltText(/peep/i)
+//   expect(char).toBe(/peep/i)
+// })
