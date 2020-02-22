@@ -51,10 +51,10 @@ export default function StarWarsCharacters() {
         </>
       )}
       <div className="buttons">
-        <button onClick={goToPrevious} disabled={!previous}>
+        <button onClick={goToPrevious} disabled={!previous} data-testid="previous">
           Previous
         </button>
-        <button onClick={goToNext} disabled={!next}>
+        <button onClick={goToNext} disabled={!next} data-testid="next">
           Next
         </button>
       </div>
