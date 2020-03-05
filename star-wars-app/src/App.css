@@ -4,6 +4,8 @@
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: url("https://wallpaperplay.com/walls/full/b/e/4/124178.jpg");
+  background-size: cover;
 }
 
 .App-header {
@@ -12,3 +14,4 @@
   align-items: center;
   justify-content: center;
 }
+

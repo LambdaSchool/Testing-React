@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "react-loader-spinner";
 
-import { getData } from "../api";
+import { getData } from "../api/getData";
 import "./star-wars-characters.css";
 
 export default function StarWarsCharacters() {
@@ -37,20 +37,20 @@ export default function StarWarsCharacters() {
     <div>
       {isLoading ? (
         <Loader
-          type="ThreeDots"
-          color="#FFC402"
+          type='ThreeDots'
+          color='#FFC402'
           height={30}
           width={100}
           timeout={3000} //3 secs
         />
       ) : (
         <>
-          {characters.map(character => (
-            <div key={character.url}>{character.name}</div>
+          {characters.map((character, i) => (
+            <div key={i}>{character.name}</div>
           ))}
         </>
       )}
-      <div className="buttons">
+      <div className='buttons'>
         <button onClick={goToPrevious} disabled={!previous}>
           Previous
         </button>
